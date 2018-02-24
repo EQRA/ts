@@ -1,3 +1,4 @@
+
 --step 1 to build initial cohort contracts/seats/users
 create table cohort
 as
@@ -8,3 +9,7 @@ f3.*
 from dim_contracts f1
 left outer join dim_seats f2 on f1.contract_id=f2.contract_id
 left outer join users f3 on f2.seat_id=f3.seat_id;
+
+--step2 to run distribution
+
+select ds, count(1) from cohort group by ds order by ds;
