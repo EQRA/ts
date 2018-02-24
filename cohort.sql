@@ -13,3 +13,6 @@ left outer join users f3 on f2.seat_id=f3.seat_id;
 --step2 to run distribution
 
 select ds, count(1) from cohort group by ds order by ds;
+
+--step 3
+exit;
